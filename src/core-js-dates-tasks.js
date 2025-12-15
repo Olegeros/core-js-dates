@@ -243,14 +243,12 @@ function getNextFridayThe13th(date) {
   const resultDate = new Date(date);
   resultDate.setDate(resultDate.getDate() + 1);
 
-  while (true) {
-    if (resultDate.getDate() === 13 && resultDate.getDay() === 5) {
-      return resultDate;
-    }
+  while (resultDate.getDate() !== 13 || resultDate.getDay() !== 5) {
     resultDate.setDate(resultDate.getDate() + 1);
   }
-}
 
+  return resultDate;
+}
 /**
  * Returns the quarter of the year for a given date.
  *
